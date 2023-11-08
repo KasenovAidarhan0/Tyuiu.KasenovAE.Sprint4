@@ -32,16 +32,16 @@ namespace Tyuiu.KasenovAE.Sprint4.Task4.V14
             Console.WriteLine("* ИСХОДНЫЕ ДАННЫЕ:                                                        *");
             Console.WriteLine("***************************************************************************");
 
-            Console.WriteLine("Введите количество строк в массиве: ");
-            int rows = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Введите количество столбцов в массиве: ");
             int columns = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите количество строк в массиве: ");
+            int rows = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("***************************************************************************");
-            int[,] mtrx = new int[columns, rows];
-            for (int i = 0; i < columns; i++)
+            int[,] mtrx = new int[rows, columns];
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < rows; j++)
+                for (int j = 0; j < columns; j++)
                 {
                     Console.Write($"Введите {i}, {j} элемент массива: ");
                     mtrx[i, j] = Convert.ToInt32(Console.ReadLine());
@@ -49,9 +49,9 @@ namespace Tyuiu.KasenovAE.Sprint4.Task4.V14
             }
 
             Console.WriteLine("\nМассив:");
-            for (int i = 0; i < columns; i++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < rows; j++)
+                for (int j = 0; j < columns; j++)
                 {
                     Console.Write($"{mtrx[i, j]} \t");
                 }
@@ -64,9 +64,9 @@ namespace Tyuiu.KasenovAE.Sprint4.Task4.V14
 
             DataService ds = new DataService();
             mtrx = ds.Calculate(mtrx);
-            for (int i = 0; i < columns; i++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < rows; j++)
+                for (int j = 0; j < columns; j++)
                 {
                     Console.Write($"{mtrx[i, j]} \t");
                 }

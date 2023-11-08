@@ -31,18 +31,18 @@ namespace Tyuiu.KasenovAE.Sprint4.Task5.V11
             Console.Write("Введите количество столбцов в массиве: ");
             int columns = Convert.ToInt32(Console.ReadLine());
             Random rnd = new Random();
-            int[,] mtrx = new int[columns, rows];
-            for (int i = 0; i < columns; i++)
+            int[,] mtrx = new int[rows, columns];
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < rows; j++)
+                for (int j = 0; j < columns; j++)
                 {
                     mtrx[i, j] = rnd.Next(-7, 2);
                 }
             }
             Console.WriteLine("Массив:");
-            for (int i = 0; i < columns; i++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < rows; j++)
+                for (int j = 0; j < columns; j++)
                 {
                     Console.Write($"{mtrx[i, j]} \t");
                 }
@@ -53,9 +53,9 @@ namespace Tyuiu.KasenovAE.Sprint4.Task5.V11
             Console.WriteLine("***************************************************************************");
             DataService ds = new DataService();
             mtrx = ds.Calculate(mtrx);
-            for (int i = 0; i < columns; i++)
+            for (int i = 0; i < rows; i++)
             {
-                for (int j = 0; j < rows; j++)
+                for (int j = 0; j < columns; j++)
                 {
                     Console.Write($"{mtrx[i, j]} \t");
                 }
